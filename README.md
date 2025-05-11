@@ -35,10 +35,10 @@ This repository is managed using [Turborepo](https://turbo.build/), which optimi
 - **Build & Caching**: Turborepo is used to optimize builds and caching, ensuring fast development cycles.
 
 ### Part 4: Bonus Firebase Technical Questions
-- Answers to the technical questions have been included in the `ANSWERS.md` file, providing insights into my approach to problem-solving, learning, and project management.
+- Answers to the technical questions have been included in the the [`ANSWERS.md`](./ANSWERS.md) file, providing insights into my approach to problem-solving, learning, and project management.
 
 ### Part 5: Personality & Technical Questions
-- Answers to the personality have been included in the `ANSWERS.md` file, providing insights into my approach to problem-solving, learning, and project management.
+- Answers to the personality have been included in the [`ANSWERS.md`](./ANSWERS.md) file, providing insights into my approach to problem-solving, learning, and project management.
 
 ## Setup and Running Instructions
 
