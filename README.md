@@ -1,84 +1,61 @@
-# Turborepo starter
+# Technical Test - [Hendra Cahyana]
 
-This Turborepo starter is maintained by the Turborepo core team.
+## Overview
+This repository contains the solution for the EBUDDY PTE. LTD. technical test, using a Turbo Monorepo to combine both the backend and frontend. The goal of this solution is to demonstrate proficiency in handling both server-side and client-side setups in a unified repo, while applying clean code principles and best practices.
 
-## Using this example
+### Monorepo Structure
+This repository is managed using [Turborepo](https://turbo.build/), which optimizes the build and development process. The repo is organized as follows:
 
-Run the following command:
+- **/apps/frontend-repo**: Contains the frontend setup using Next.js with React MUI, Redux, and Firebase Authentication.
+- **/apps/backend-repo**: Contains the backend setup using Express.js, Firebase SDK, and Firebase Functions.
+- **/packages/shared**: Contains shared logic and models used by both the frontend and backend (e.g., the `user.ts` model).
 
-```sh
-npx create-turbo@latest
-```
+### Part 1: Backend Setup (Express.js + Firebase)
+- **Framework**: Express.js
+- **Firebase SDK**: Configured in `apps/backend`.
+- **Endpoints**:
+  - `update-user-data`: Updates Firestore data in the USERS collection.
+  - `fetch-user-data`: Fetches data from the USERS collection.
+- **Middleware**: Auth middleware to validate request tokens.
+- **Directory Structure**:
+  - `routes`: API route definitions.
+  - `controller`: Contains logic for handling API requests.
+  - `middleware`: Holds authentication middleware.
+  - `config`: Firebase configuration.
 
-## What's inside?
+### Part 2: Frontend Setup (Next.js + React MUI)
+- **Framework**: Next.js with React MUI.
+- **State Management**: Redux for state management, configured in `apps/frontend/store`.
+- **Responsive Design**: Mobile-first design using React MUI for UI components.
+- **API Integration**: Fetches data from the backend and manages state updates.
+  
+### Part 3: Monorepo Setup via Turborepo
+- All code for the frontend and backend is contained within a single monorepo for efficient management.
+- **Shared Logic**: Common models and utilities (e.g., `user.ts`) are stored in `/packages/shared` and used by both the frontend and backend.
+- **Build & Caching**: Turborepo is used to optimize builds and caching, ensuring fast development cycles.
 
-This Turborepo includes the following packages/apps:
+### Part 4: Bonus Firebase Technical Questions
+- Answers to the technical questions have been included in the `ANSWERS.md` file, providing insights into my approach to problem-solving, learning, and project management.
 
-### Apps and Packages
+### Part 5: Personality & Technical Questions
+- Answers to the personality have been included in the `ANSWERS.md` file, providing insights into my approach to problem-solving, learning, and project management.
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## Setup and Running Instructions
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Setup:
+1. Clone the repository.
+2. Install dependencies using pnpm:
+   ```bash
+   pnpm install
+   ```
 
-### Utilities
+### Running the Full Monorepo:
+1. Ensure everything is set up in the Turbo monorepo.
+2. Use the following command to run both apps in parallel:
+   ```bash
+   pnpm dev
+   ```
+   This will start both the backend and frontend apps simultaneously.
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm dev
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+## License
+This repository is submitted as part of a technical test and is not intended for any commercial use.
